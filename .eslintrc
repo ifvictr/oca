@@ -1,9 +1,10 @@
 {
-    "globals": {
-        "$": true,
-        "document": true,
+    "env": {
+        "browser": true,
         "jquery": true,
-        "location": true,
-        "window": true
+        "node": true
+    },
+    "globals": {
+        "Clipboard": true
     }
 }
