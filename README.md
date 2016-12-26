@@ -2,7 +2,8 @@
 Oca is a very simple URL shortener, with a user-first design, and simple to deploy.
 
 ### Features
-- Analytics for all shortened URLs (TODO)
+- Analytics for all shortened URLs (planned)
+- User accounts for managing URLs (planned)
 - Custom aliases for short URLs
 
 ### Requirements
@@ -12,9 +13,9 @@ Oca is a very simple URL shortener, with a user-first design, and simple to depl
 
 ### Environment variables
 This application will require you to set a few environment variables in order to function properly.
+
 |Variable|Data type|Example|Description|
 |--------|---------|-------|-----------|
-|APP_ALLOW_ALIASES|boolean|`true`|Toggles creation of URL aliases (aka custom URLs)|
 |APP_DOMAIN|string|`oca.li`|Domain which the app will use|
 |APP_NAME|string|`Oca`|Name of the app, e.g. "Mini". This will be displayed on page titles, content, etc.|
 |APP_TAGLINE|string|`A URL shortener`|Shows next to the app icon, leave blank to hide tagline|
