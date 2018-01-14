@@ -1,31 +1,39 @@
-# [Oca](https://oca.li)
+# Oca
+
 Oca is a very simple URL shortener, with a user-first design, and simple to deploy.
 
-### Features
+## Features
+
 - Analytics for all shortened URLs (planned)
 - User accounts for managing URLs (planned)
 - Custom aliases for short URLs
 
-### Requirements
+## Requirements
+
 - Node.js
-- MySQL database, or any variant
+- MySQL database
 - All required dependencies in the [package.json](package.json) file
 
-### Environment variables
+## Configuration variables
+
 This application will require you to set a few environment variables in order to function properly.
 
 |Variable|Data type|Example|Description|
 |--------|---------|-------|-----------|
 |APP_DOMAIN|string|`oca.li`|Domain which the app will use|
-|APP_NAME|string|`Oca`|Name of the app, e.g. "Mini". This will be displayed on page titles, content, etc.|
-|APP_TAGLINE|string|`A URL shortener`|Shows next to the app icon, leave blank to hide tagline|
-|DATABASE_URL|string|`mysql://root@localhost/db`|URL that points to your database|
+|APP_NAME|string|`Oca`|Name of the app. This will be displayed on page titles, content, etc.|
+|DATABASE_HOST|string|`localhost`|Hostname at which the database is located|
+|DATABASE_NAME|string|`oca`|Name of the database|
+|DATABASE_PASSWORD|string|`password`|Database password|
+|DATABASE_USER|string|`oca`|User that was granted privileges for the database|
 
-### Setup
-1. Run `npm install`, this will install all the dependencies.
+## Setup
+
+1. Run `npm install --production`, this will install all the dependencies.
 2. Set up all the environment variables specified in the [Configuration variables](#configuration-variables) section.
 3. Find a short domain to use for the app.
 4. Start the server by running `npm start`.
 
-### License
+## License
+
 [MIT](LICENSE.txt)

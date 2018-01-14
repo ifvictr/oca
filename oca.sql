@@ -5,6 +5,7 @@ CREATE TABLE `records` (
     `clicks` INT UNSIGNED NOT NULL DEFAULT '0',
     PRIMARY KEY (`id`)
 );
+
 DROP TABLE IF EXISTS `aliases`;
 CREATE TABLE `aliases` (
     `name` VARCHAR(15) NOT NULL,

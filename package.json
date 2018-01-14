@@ -1,37 +1,39 @@
 {
-  "name": "Oca",
-  "version": "1.0.0",
-  "description": "A URL shortener that has a clean design, and is easy to use. Finally.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ifvictr/oca.git"
-  },
-  "author": "ifvictr",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ifvictr/oca/issues"
-  },
-  "homepage": "https://github.com/ifvictr/oca#readme",
-  "dependencies": {
-    "base62": "^1.1.2",
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "hbs": "^4.0.1",
-    "mysql": "^2.12.0"
-  },
-  "engines": {
-    "node": "^4.6.1",
-    "npm": "^2.15.9"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^2.3.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^2.0.0"
-  }
+    "name": "oca",
+    "version": "2.0.0",
+    "description": "A URL shortener that has a clean design, and is easy to use. Finally.",
+    "main": "app.js",
+    "scripts": {
+        "postinstall": "gulp minify",
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ifvictr/oca.git"
+    },
+    "author": "ifvictr",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ifvictr/oca/issues"
+    },
+    "homepage": "https://github.com/ifvictr/oca#readme",
+    "dependencies": {
+        "base62": "^1.2.0",
+        "bluebird": "^3.5.0",
+        "body-parser": "^1.15.2",
+        "express": "^4.15.4",
+        "express-handlebars": "^3.0.0",
+        "express-minify-html": "^0.12.0",
+        "helmet": "^3.8.1",
+        "path": "^0.12.7",
+        "promise-mysql": "^3.0.2",
+        "validator": "^9.2.0"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^4.1.0",
+        "gulp-clean-css": "^3.9.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-uglify": "^3.0.0"
+    }
 }

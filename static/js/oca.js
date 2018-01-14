@@ -29,7 +29,6 @@ $(function(){
         var $longUrl = $("#long-url");
         var $aliasUrl = $("#alias-url");
         var $shortUrl = $("#short-url");
-        console.log(lastSubmit);
         // If parts are same as last, stop execution
         if(($aliasUrl.val() === lastSubmit.aliasUrl) && ($longUrl.val() === lastSubmit.longUrl)){
             return;
@@ -52,7 +51,6 @@ $(function(){
             }
         })
             .done(function(data){
-                console.log(data);
                 // If 'success' is true, remove error indications and indicate success, then display shortened URL
                 if(data.success){
                     $longUrl.removeClass("fail");
@@ -68,7 +66,6 @@ $(function(){
             })
             // What happened? Must be a problem with the back-end
             .fail(function(data){
-                console.log(data);
                 $longUrl.addClass("fail");
                 $shortUrl.removeClass("success");
             });

@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400");
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+a,
+code,
+em,
+strong,
+b,
+i,
+ol,
+ul,
+li,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+section {
+    border: 0;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+input {
+    color: #ffffff;
+    font-family: Roboto, sans-serif;
+    font-size: 12pt;
+    font-weight: 100;
+    line-height: 1;
+}
+
+body {
+    background: linear-gradient(180deg, #7474bf, #348ac7);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+a {
+    border-bottom: 1px dotted #ffffff;
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+strong,
+b {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 1.55em;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1.25em;
+    line-height: 1.5;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+input {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 0;
+    font-size: 2.5em;
+    height: 2.25em;
+    max-width: 100%;
+    outline: 0;
+    padding: 0.5em;
+    text-transform: lowercase;
+    transition: 0.2s width ease-in-out;
+    width: 100%;
+}
+
+input[disabled] {
+    background: rgba(255, 255, 255, 0.05) !important;
+    cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="url"] {
+    background: none;
+}
+
+input[type="submit"],
+input[type="button"] {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.2s background ease-in-out;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+input[type="submit"]:active,
+input[type="button"]:active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    min-height: 100vh;
+    justify-content: center;
+    max-width: 50%;
+    transition: 0.2s all ease-in-out;
+}
+
+#header .title {
+    box-shadow: inset 0 -3px 0 0 #ffffff;
+    display: inline-block;
+    font-size: 4.5em;
+    text-transform: lowercase;
+}
+
+#copy-url {
+    border-left: 0;
+    border-radius: 0 0 4px 0;
+    float: right;
+    width: 25%;
+}
+
+#footer {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 0.5em;
+    text-align: left;
+    text-transform: lowercase;
+}
+
+#footer .row {
+    font-size: 1.25em;
+}
+
+#footer .row li {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+}
+
+#footer .row li:last-child {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#long-url {
+    border-radius: 4px 4px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#short-url {
+    border-radius: 0 0 0 4px;
+    cursor: pointer;
+    text-transform: none;
+    width: 75%;
+}
+
+.container {
+    margin: 1.5em 0;
+    text-align: left;
+    width: 100%;
+}
+
+.fail,
+.success {
+    transition: 0.2s box-shadow ease-in-out;
+}
+
+.fail {
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.25);
+}
+
+.row li {
+    transition: 0.2s width ease-in-out;
+}
+
+.success {
+    box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.25);
+}
+
+@media screen and (max-width: 980px) {
+    #wrapper {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    body {
+        font-size: 11pt;
+    }
+    #wrapper {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    input {
+        display: block;
+        float: none !important;
+        width: 100% !important;
+    }
+    #short-url {
+        border-radius: 0;
+    }
+    #copy-url {
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 0 0 4px 4px;
+    }
+    #footer .row li {
+        border: 0;
+        display: block;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+    }
+    #footer .row li:not(:last-child) {
+        padding-bottom: 0.5em;
+    }
+}
