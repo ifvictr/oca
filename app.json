@@ -1,7 +1,6 @@
 {
     "name": "Oca",
     "description": "A URL shortener that has a clean design, and is easy to use. Finally.",
-    "logo": "",
     "repository": "https://github.com/ifvictr/oca",
     "scripts": {
         "postdeploy": "bin/init-deployment"
