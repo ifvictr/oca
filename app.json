@@ -1,0 +1,27 @@
+{
+    "name": "Oca",
+    "description": "A URL shortener that has a clean design, and is easy to use. Finally.",
+    "logo": "",
+    "repository": "https://github.com/ifvictr/oca",
+    "scripts": {
+        "postdeploy": "bin/init-deployment"
+    },
+    "success_url": "/",
+    "addons": [
+        "mysql"
+    ],
+    "env": {
+        "APP_DOMAIN": {
+            "description": "Domain which the app will use",
+            "value": "oca.li"
+        },
+        "APP_NAME": {
+            "description": "Name of the app, e.g. \"Mini\". This will be displayed on page titles, content, etc.",
+            "value": "Oca"
+        },
+        "APP_TAGLINE": {
+            "description": "Shows next to the app icon, leave blank to hide tagline",
+            "value": "A URL shortener"
+        }
+    }
+}
