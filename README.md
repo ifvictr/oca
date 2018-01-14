@@ -1,6 +1,10 @@
 # [Oca](https://oca.li)
 Oca is a very simple URL shortener, with a user-first design, and simple to deploy.
 
+
+### Deploy
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ### Features
 - Analytics for all shortened URLs (planned)
 - User accounts for managing URLs (planned)
