@@ -1,5 +1,5 @@
 {
-    "name": "oca",
+    "name": "wee",
     "version": "2.0.0",
     "description": "A URL shortener that has a clean design, and is easy to use. Finally.",
     "main": "app.js",
@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ifvictr/oca.git"
+        "url": "git+https://github.com/ifvictr/wee.git"
     },
     "author": "ifvictr",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ifvictr/oca/issues"
+        "url": "https://github.com/ifvictr/wee/issues"
     },
-    "homepage": "https://github.com/ifvictr/oca#readme",
+    "homepage": "https://github.com/ifvictr/wee#readme",
     "dependencies": {
         "base62": "^1.2.0",
         "bluebird": "^3.5.0",

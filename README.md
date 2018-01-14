@@ -1,6 +1,6 @@
-# Oca
+# wee
 
-Oca is a very simple URL shortener, with a user-first design, and simple to deploy.
+wee is a very simple URL shortener, with a user-first design, and simple to deploy.
 
 ## Features
 
@@ -20,12 +20,12 @@ This application will require you to set a few environment variables in order to
 
 |Variable|Data type|Example|Description|
 |--------|---------|-------|-----------|
-|APP_DOMAIN|string|`oca.li`|Domain which the app will use|
-|APP_NAME|string|`Oca`|Name of the app. This will be displayed on page titles, content, etc.|
+|APP_DOMAIN|string|`w.ee`|Domain which the app will use|
+|APP_NAME|string|`wee`|Name of the app. This will be displayed on page titles, content, etc.|
 |DATABASE_HOST|string|`localhost`|Hostname at which the database is located|
-|DATABASE_NAME|string|`oca`|Name of the database|
+|DATABASE_NAME|string|`wee`|Name of the database|
 |DATABASE_PASSWORD|string|`password`|Database password|
-|DATABASE_USER|string|`oca`|User that was granted privileges for the database|
+|DATABASE_USER|string|`wee`|User that was granted privileges for the database|
 
 ## Setup
 
