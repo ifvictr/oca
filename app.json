@@ -7,7 +7,7 @@
     },
     "success_url": "/",
     "addons": [
-        "mysql"
+        "jawsdb"
     ],
     "env": {
         "APP_DOMAIN": {
