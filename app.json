@@ -19,6 +19,9 @@
         "APP_TAGLINE": {
             "description": "Shows next to the app icon, leave blank to hide tagline",
             "value": "A URL shortener"
+        },
+        "CONF":{
+            "CACHE_TIME":200
         }
     }
 }

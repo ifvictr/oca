@@ -3,6 +3,7 @@ var bodyParser = require("body-parser");
 var express = require("express");
 var mysql = require("mysql");
 var app = express();
+var cache = require('memory-cache');
 var connection = mysql.createConnection(process.env.DATABASE_URL);
 // Attempt to connect to database, terminate on fail
 connection.connect(function(error){
@@ -40,21 +41,32 @@ app.get("/:id", function(request, response){
         else{
             id = base62.decode(id);
         }
-        connection.query("SELECT url FROM records WHERE id = ?", [id], function(error, result){
-            // Record with this id found, initiate redirect
-            if(!error && result.length !== 0){
-                // Link was used, increment 'click'
-                connection.query("UPDATE records SET clicks = clicks + 1 WHERE id = ?", [id]);
-                // Prevent 301s from being cached on the client side
-                response.setHeader("Cache-Control", "no-store,no-cache,must-revalidate,post-check=0,pre-check=0");
-                response.setHeader("Expires", "0");
-                response.redirect(301, result[0].url);
-            }
-            // Not found, throw a 404 and render the error page
-            else{
-                response.status(404).render("error", {name: process.env.APP_NAME || "???"});
-            }
-        });
+        if(cache.get('r_'+id)){
+            connection.query("UPDATE records SET clicks = clicks + 1 WHERE id = ?", [id]);
+            // Prevent 301s from being cached on the client side
+            response.setHeader("Cache-Control", "no-store,no-cache,must-revalidate,post-check=0,pre-check=0");
+            response.setHeader("Expires", "0");
+            let redirect_url = cache.get('r_'+id);
+            response.redirect(301, redirect_url);
+        }else{
+            connection.query("SELECT url FROM records WHERE id = ?", [id], function(error, result){
+                // Record with this id found, initiate redirect
+                if(!error && result.length !== 0){
+                    // Link was used, increment 'click'
+                    connection.query("UPDATE records SET clicks = clicks + 1 WHERE id = ?", [id]);
+                    // Prevent 301s from being cached on the client side
+                    response.setHeader("Cache-Control", "no-store,no-cache,must-revalidate,post-check=0,pre-check=0");
+                    response.setHeader("Expires", "0");
+                    let redirect_url = result[0].url;
+                    cache.put('r_'+id, redirect_url, process.env.CONF.CACHE_TIME);
+                    response.redirect(301, redirect_url);
+                }
+                // Not found, throw a 404 and render the error page
+                else{
+                    response.status(404).render("error", {name: process.env.APP_NAME || "???"});
+                }
+            });
+        }
     });
 });
 app.get("*", function(request, response){
